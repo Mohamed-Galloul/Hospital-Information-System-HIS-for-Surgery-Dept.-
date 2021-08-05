@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col md-12">
+            <div class="jumbotron p-3">
+                      <button type="button" class="btn btn-dark btn-lg float-right "
+                        onclick=location.href="{{url_for('admin_view_operations')}}">Back
+                    </button>
+                <h2 class="h2">Doctor Details</h2>
+                <table class="table table-hover table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">SSN</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Sex</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Sub-Department</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   <tr>
+                        <td scope="row">{{operation.surgeon.id}}</td>
+                        <td>{{operation.surgeon.ssn}}</td>
+                        <td>{{operation.surgeon.name}}</td>
+                        <td>{{operation.surgeon.sex }}</td>
+                        <td>{{operation.surgeon.address}}</td>
+                        <td>{{operation.surgeon.age}}</td>
+                        <td>{{operation.surgeon.email}}</td>
+                        <td>{{operation.surgeon.phone}}</td>
+                        <td>{{operation.surgeon.sub_department}}</td>
+                   <tr>
+                  <tbody>
+                  </table>
+                    <hr>
+                <h2 class="h2">Patient Details</h2>
+                <table class="table table-hover table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">SSN</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Sex</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Medical History</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   <tr>
+                        <td scope="row">{{operation.ppatient.id}}</td>
+                        <td>{{operation.ppatient.ssn}}</td>
+                        <td>{{operation.ppatient.name}}</td>
+                        <td>{{operation.ppatient.sex }}</td>
+                        <td>{{operation.ppatient.address}}</td>
+                        <td>{{operation.ppatient.age}}</td>
+                        <td>{{operation.ppatient.email}}</td>
+                        <td>{{operation.ppatient.phone}}</td>
+                        <td>{{operation.ppatient.medical_history}}</td>
+                        <td>
+                   <tr>
+                  <tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}

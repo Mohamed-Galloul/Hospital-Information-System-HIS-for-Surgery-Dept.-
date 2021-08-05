@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+            <div class="jumbotron p-1">
+                <h2> Manage Patients Records </h2>
+                    <button type="button" class="btn btn-success btn-lg float-right "
+                        onclick=location.href="{{url_for('admin_add_new_patient')}}">Add New Patient
+                    </button>
+                <table class="table table-hover table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">SSN</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Sex</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Age</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Image File</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                            
+                    {% for patient in all_patients %}
+                    <tr>
+                        <td scope="row">{{patient.id}}</td>
+                        <td>{{patient.ssn}}</td>
+                        <td>{{patient.name}}</td>
+                        <td>{{patient.sex }}</td>
+                        <td>{{patient.address}}</td>
+                        <td>{{patient.age}}</td>
+                        <td>{{patient.email}}</td>
+                        <td>{{patient.phone}}</td>
+                        <td>{{patient.image_file}}</td>
+                       <td>
+                            <a href="{{ url_for('admin_upload_patient_scan', id=patient.id)}}"  class="btn btn-success btn-xs">View/Update Patient Scan</a>
+                        </td>                          
+                         <td>
+                            <a href="{{ url_for('admin_view_patient_operations', id=patient.id)}}"  class="btn btn-warning btn-xs">Scheduled Operations</a>
+                        </td>        
+                        <td>
+                            <a href="{{ url_for('admin_delete_patient', id=patient.id)}}"  class="btn btn-danger btn-xs" onclick= " return confirm ('Are you sure you want to delete this patient? NOTE: all operations related to that patient will be deleted too'); ">Delete</a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </table>
+            </div>
+
+
+            </tbody>
+    </div>
+</div>
+
+</div>
+{% endblock %}

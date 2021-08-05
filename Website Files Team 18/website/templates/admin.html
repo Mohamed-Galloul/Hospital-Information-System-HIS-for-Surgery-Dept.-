@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+
+<!-- 
+ url_for('admin_view_patients')
+
+ url_for('admin_view_admins') 
+ url_for('admin_view_operations') 
+ url_for('admin_view_contacus_responses') 
+ -->
+{% block content %}
+
+<html>
+<title> Admin </title>
+<head>
+    
+    <title></title>
+    
+    </head>
+    
+    
+    <link rel="stylesheet" href="css/admin.css">
+<body>
+<!-- admain page back_ground -->
+    
+    <div  class="container">
+
+    
+    
+        <h1 class="hvr-underline-from-left">Access one of the following Table </h1>
+        <div class="btn_container center"> 
+            <button type="button" class="btn btn-info btn-lg" >
+            <a class="badge badge-info" href="{{ url_for('admin_view_doctors') }}">Doctors </a>
+            </button>
+
+            <button type="button" class="btn btn-info btn-lg">
+            <a class="badge badge-info" href="{{ url_for('admin_view_patients') }}">Patients </a>
+            </button>
+
+            <button type="button" class="btn btn-info btn-lg">
+            <a class="badge badge-info" href="{{ url_for('admin_view_admins') }}">Admins </a>
+            </button>
+
+            <button type="button" class="btn btn-info btn-lg">
+            <a class="badge badge-info" href="{{ url_for('admin_view_operations') }}">Operations </a>
+            </button>
+
+            <button type="button" class="btn btn-info btn-lg">
+            <a class="badge badge-info" href="{{ url_for('admin_view_contact_us_responses') }}">Contact Us Respones </a>
+            </button>
+        </div>
+              
+    </div>
+ 
+</body>
+
+
+</html>
+
+{% endblock content %}

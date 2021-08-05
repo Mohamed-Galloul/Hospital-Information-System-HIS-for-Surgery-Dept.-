@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+            <div class="jumbotron p-1">
+                <h2> Manage Operations Records </h2>
+                    <button type="button" class="btn btn-success btn-lg float-right "
+                        onclick=location.href="{{url_for('admin_add_new_operation')}}">Add New Operation
+                    </button>
+                <table class="table table-hover table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Code</th>
+                      <th scope="col">Location</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Start Time</th>
+                      <th scope="col">End Time</th>
+                      <th scope="col">Patient ID</th>
+                      <th scope="col">Doctor ID</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                            
+                    {% for operation in all_operations %}
+                    <tr>
+                        <td scope="row">{{operation.code}}</td>
+                        <td>{{operation.location}}</td>
+                        <td>{{operation.date}}</td>
+                        <td>{{operation.start_time}}</td>
+                        <td>{{operation.end_time}}</td>
+                        <td>{{operation.patient_id}}</td>
+                        <td>{{operation.doctor_id}}</td>
+                        <td>
+                            <a href="{{ url_for('admin_view_operation_details', code=operation.code)}}"  class="btn btn-warning btn-xs">Operation Details</a>
+                        </td>
+                        <td>
+                            <a href="{{ url_for('admin_delete_operation', code=operation.code)}}"  class="btn btn-danger btn-xs" onclick= " return confirm ('Are you sure you want to delete this operation?); ">Delete</a>
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+                </table>
+            </div>
+
+
+            </tbody>
+    </div>
+</div>
+
+</div>
+{% endblock %}
