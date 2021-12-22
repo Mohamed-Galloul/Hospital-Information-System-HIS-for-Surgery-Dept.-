@@ -1,4 +1,4 @@
-# Hospital-Information-System-HIS-for-Surgery-Dept.-
+# Radiology-Information-System-RIS-for-Surgery-Dept.-
 
 # For the website tour please consider watching the following [video](team18_website_tour.mp4)
 ![image](https://user-images.githubusercontent.com/61247704/145687210-aeeb12b6-a7db-402c-83ba-468168d9e2c5.png)
